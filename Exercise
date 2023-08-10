@@ -1,0 +1,35 @@
+import { useState } from "react";
+import "./styles.css";
+
+
+
+export default function App() {
+
+  const [data,setData]=useState([
+    { id: 1, username: 'test1' },
+    { id: 2, username: 'test2' },
+    { id: 3, username: 'test3' },
+    { id: 4, username: 'test4' },
+    { id: 5, username: 'test5' },
+    { id: 6, username: 'test6' },
+    { id: 7, username: 'test7' },
+    { id: 8, username: 'test8' },
+    { id: 9, username: 'test9' },
+    { id: 10, username: 'test10' },
+    { id: 11, username: 'test11' },
+    { id: 12, username: 'test12' },
+    { id: 13, username: 'test13' },
+    { id: 14, username: 'test14' }
+    ])
+const handleDelete=(id)=>{
+const newdata=data.filter(data=>data.id!==id)
+setData(newdata);
+
+
+}
+  return (
+    <div className="App">
+      <h2>{data.map(data=><div>{data.id}. {data.username}{" "}<button onClick={()=>handleDelete(data.id)}>DELETE</button></div>)}</h2>
+    </div>
+  );
+}
