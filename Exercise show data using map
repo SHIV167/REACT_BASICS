@@ -49,10 +49,3 @@ export default function App() {
   );
 }
 
-
-  return (
-    <div className="App">
-      <h2>{data.map(data=><div>{data.id}. {data.username}{" "}<button onClick={()=>handleDelete(data.id)}>DELETE</button></div>)}</h2>
-    </div>
-  );
-}
