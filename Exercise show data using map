@@ -27,6 +27,29 @@ setData(newdata);
 
 
 }
+
+==============================================================================================SPREAD OPERATOR============================================
+
+import "./styles.css";
+import { useState } from "react";
+export default function App() {
+  const [obj,setObj]=useState({firstName: "one",lastName: "two",address:{addressOne: 'testone',addressTwo: 'testtwo'}});
+  function handleChange(){
+ setObj({...obj,address:{...obj.address,addressTwo:'testThree'}});
+
+}
+  return (
+    <div className="App">
+      <h2>{obj['firstName']}</h2>
+      <h2>{obj['lastName']}</h2>
+      <h2>{obj.address['addressOne']}</h2>
+      <h2>{obj.address['addressTwo']}</h2>
+      <button onClick={handleChange}>BUTTON</button>
+    </div>
+  );
+}
+
+
   return (
     <div className="App">
       <h2>{data.map(data=><div>{data.id}. {data.username}{" "}<button onClick={()=>handleDelete(data.id)}>DELETE</button></div>)}</h2>
