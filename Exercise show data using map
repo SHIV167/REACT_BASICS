@@ -48,4 +48,19 @@ export default function App() {
     </div>
   );
 }
+==========================================================================JAVASCRIPT HOISTINGS CONCEPTS TRICKS ================================================================
 
+
+  function A(x)
+	{
+	function B(y)
+	{
+	function C(z)
+	{
+	console.log(x + y + z);
+	}
+	C(10);
+	}
+	B(20);
+	}
+  A(30)
